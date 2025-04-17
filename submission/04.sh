@@ -12,7 +12,6 @@ op_push_data_20bytes_hex="14"
 
 publicKey=02e3af28965693b9ce1228f9d468149b831d6a0540b25e8a9900f71372c11fb277
 publicKey_hash=$(echo -n "$publicKey" | xxd -r -p | openssl dgst -sha256 -binary | openssl dgst -ripemd160 | awk '{print $2}')
-echo $publicKey_hash
 
 op_equalverify="88"
 op_checksig="ac"
