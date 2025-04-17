@@ -16,6 +16,6 @@ publicKey_hash=$(echo -n "$publicKey" | xxd -r -p | openssl dgst -sha256 -binary
 op_equalverify="88"
 op_checksig="ac"
 
-script_hex="${op_push_data_4bytes_hex}${time_hex_le}${op_checklocktimeverify}${op_drop}${op_dup}${op_hash160}${op_push_data_20bytes_hex}${publicKey_hash}${op_equalverify}${op_checksig}"
+script_hex="${op_push_data_4bytes_hex}${time_hex_little_endian}${op_checklocktimeverify}${op_drop}${op_dup}${op_hash160}${op_push_data_20bytes_hex}${publicKey_hash}${op_equalverify}${op_checksig}"
 
 echo "$script_hex"
